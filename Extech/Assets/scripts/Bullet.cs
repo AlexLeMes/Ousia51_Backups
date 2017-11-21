@@ -35,7 +35,7 @@ public class Bullet : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "enemy")
+        if(other.gameObject.tag != "Player")
         {
             _charater = other.gameObject.GetComponent<character>();
 
