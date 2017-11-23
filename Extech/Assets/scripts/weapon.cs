@@ -5,6 +5,10 @@ using UnityEngine.UI;
 
 public class weapon : MonoBehaviour {
 
+    public Animator weaponAnim;
+    GameObject _player;
+
+
     AudioSource weaponAudio;
     public AudioSource flamethrowerAudioSource;
     //AudioClip shootingSound;
@@ -67,6 +71,9 @@ public class weapon : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
+        _player = GameObject.FindGameObjectWithTag("Player");
+        weaponAnim = _player.GetComponent<Animator>();
+
         weaponAudio = GetComponent<AudioSource>();
 
         flamethrowerLight.SetActive(false);
@@ -229,6 +236,8 @@ public class weapon : MonoBehaviour {
         plasmarb = plasmashot.GetComponent<Rigidbody>();
         plasmarb.AddForce(transform.forward * force);
 
+        weaponAnim.Play("shoot");
+
     }
     public void shootPowerAttack()
     {
@@ -237,6 +246,8 @@ public class weapon : MonoBehaviour {
         plasmashot = Instantiate(plasmaSpecial, transform.position, Quaternion.identity);
         plasmarb = plasmashot.GetComponent<Rigidbody>();
         plasmarb.AddForce(transform.forward * force);
+
+        weaponAnim.Play("shoot");
     }
 
     /*

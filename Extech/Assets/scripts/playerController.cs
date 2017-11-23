@@ -12,6 +12,9 @@ public class playerController : MonoBehaviour {
 */
     // character _character;
 
+
+    public Animator anim;
+
     //PLAYER MOVE SPEED
     public float moveSpeed = 5f;
     //public float rotateSpeed = 90f;
@@ -47,6 +50,8 @@ public class playerController : MonoBehaviour {
 
     private new void Start()
     {
+        anim = GetComponent<Animator>();
+
         stamnia = maxStam;
         staminaBar.maxValue = maxStam;
         staminaBar.value = stamnia;
@@ -87,23 +92,29 @@ public class playerController : MonoBehaviour {
         //PLAYER KEY INPUT MOVEMENT//
         if (Input.GetKey(KeyCode.W))
         {
+            anim.Play("Walk_Forward");
             transform.Translate(Vector3.forward * currentSpeed * Time.deltaTime);
         }
         if (Input.GetKey(KeyCode.S))
         {
+            anim.Play("Walk_Backward");
             transform.Translate(Vector3.back * currentSpeed * Time.deltaTime);
         }
         if (Input.GetKey(KeyCode.D))
         {
+            anim.Play("Walk_Right");
             transform.Translate(Vector3.right * currentSpeed * Time.deltaTime);
         }
         if (Input.GetKey(KeyCode.A))
         {
+            anim.Play("Walk_Left");
             transform.Translate(Vector3.left * currentSpeed * Time.deltaTime);
         }
 
         if (Input.GetKey(KeyCode.LeftShift) && canBoost)
         {
+
+            anim.Play("Sprint");
 
             currentSpeed += boostSpeed;
 
