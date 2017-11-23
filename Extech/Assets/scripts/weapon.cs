@@ -39,6 +39,7 @@ public class weapon : MonoBehaviour {
     public float powerAttackChargeRate;
 
     public GameObject flameBullet;
+    public GameObject flamethrowerLight;
 
     GameObject plasmashot;
     GameObject flameShot;
@@ -67,6 +68,8 @@ public class weapon : MonoBehaviour {
     void Start()
     {
         weaponAudio = GetComponent<AudioSource>();
+
+        flamethrowerLight.SetActive(false);
 
         chargingEffect.Stop();
         ischarging = false;
@@ -187,6 +190,7 @@ public class weapon : MonoBehaviour {
         if (Input.GetMouseButton(0) && flamethrower && canUseFlamethrower)
         {
             flame.Play();
+            flamethrowerLight.SetActive(true);
             //shootFlameThrower();
             //shootFlameThrowerBullet();
             StartCoroutine(shootFlameThrowerBullet());
@@ -206,7 +210,9 @@ public class weapon : MonoBehaviour {
         else
         {
             flame.Stop();
+            flamethrowerLight.SetActive(false);
         }
+
         if(Input.GetMouseButtonUp(0) && flamethrower)
         {
             weaponAudio.Stop();

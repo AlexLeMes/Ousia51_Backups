@@ -8,6 +8,8 @@ public class GameController : MonoBehaviour {
 
     public static GameController instance = null;
 
+
+
     /*
         TODO:
             //SET-UP SINGLETON
@@ -17,10 +19,14 @@ public class GameController : MonoBehaviour {
     public int mainLevel = 1;
 
     public GameObject console;
-    public weapon _weapon;
+    
     //EDIT THESE WHEN MADE INSTANCE
 
     GameObject player;
+    playerController _playerController;
+
+    GameObject playerWeapon;
+    weapon _weapon;
 
     public GameObject spawnPoint;
     Vector3 spawnLocation;
@@ -45,12 +51,17 @@ public class GameController : MonoBehaviour {
         }
         //Sets this to not be destroyed when reloading scene
         DontDestroyOnLoad(gameObject);
-
-        player = GameObject.FindGameObjectWithTag("Player");
+        
     }
 
     void Start ()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
+        _playerController = player.GetComponent<playerController>();
+
+        playerWeapon = GameObject.FindGameObjectWithTag("playerWeapon");
+        _weapon = playerWeapon.GetComponent<weapon>();
+
         spawnLocation = spawnPoint.transform.position;
 
         console.SetActive(false);
@@ -96,6 +107,18 @@ public class GameController : MonoBehaviour {
             Time.timeScale = 0;
             pauseMenuObj.SetActive(true);
         }
+
+        if(pauseMenuObj.activeSelf)
+        {
+            _playerController.enabled = false;
+            _weapon.enabled = false;
+        }
+        else
+        {
+            _playerController.enabled = true;
+            _weapon.enabled = true;
+        }
+
     }
 
     public void gotoMenu()
@@ -106,7 +129,7 @@ public class GameController : MonoBehaviour {
     
     public void debugAddAmmo()
     {
-        _weapon.gas += 50;
+        _weapon.gas += 250;
     }
     
 }

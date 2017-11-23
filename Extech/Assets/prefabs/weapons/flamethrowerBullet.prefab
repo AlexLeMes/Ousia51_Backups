@@ -26,7 +26,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1711865773262750
 GameObject:
   m_ObjectHideFlags: 0
@@ -55,7 +55,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1711865773262750}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.7871988, y: 2.049, z: 16.954874}
+  m_LocalPosition: {x: 87.6561, y: 3.522, z: -107.41829}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 4871224883126748}
@@ -209,5 +209,5 @@ MonoBehaviour:
   fireImpactEffect: {fileID: 1132802778598138, guid: 4d38d9bf18b13ab4988cd1e01d57013a,
     type: 2}
   burnDamage: 15
-  burnTime: 5
+  burnTime: 7
   burnTickRate: 1
