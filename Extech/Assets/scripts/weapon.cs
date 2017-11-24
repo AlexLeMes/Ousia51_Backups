@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class weapon : MonoBehaviour {
 
     public Animator weaponAnim;
+    bool animShoot = false;
     GameObject _player;
 
 
@@ -236,7 +237,8 @@ public class weapon : MonoBehaviour {
         plasmarb = plasmashot.GetComponent<Rigidbody>();
         plasmarb.AddForce(transform.forward * force);
 
-        weaponAnim.Play("shoot");
+        animShoot = true;
+        weaponAnim.SetBool("shoot", animShoot);
 
     }
     public void shootPowerAttack()
@@ -247,7 +249,8 @@ public class weapon : MonoBehaviour {
         plasmarb = plasmashot.GetComponent<Rigidbody>();
         plasmarb.AddForce(transform.forward * force);
 
-        weaponAnim.Play("shoot");
+        animShoot = true;
+        weaponAnim.SetBool("shoot", animShoot);
     }
 
     /*
