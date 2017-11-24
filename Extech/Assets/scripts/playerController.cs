@@ -14,6 +14,8 @@ public class playerController : MonoBehaviour {
 
 
     public Animator anim;
+    float inputH = 0f;
+    float inputV = 0f;
 
     //PLAYER MOVE SPEED
     public float moveSpeed = 5f;
@@ -40,7 +42,7 @@ public class playerController : MonoBehaviour {
     bool canMove = true;
     bool moving = false;
     bool canBoost = true;
-    bool boosting = true;
+    bool boosting = false;
     //private pickups pickup;
 
     private void Awake()
@@ -64,6 +66,12 @@ public class playerController : MonoBehaviour {
 
     void Update()
     {
+
+        inputH = Input.GetAxis("Horizontal");
+        inputV = Input.GetAxis("Vertical");
+
+        anim.SetFloat("inputH", inputH);
+        anim.SetFloat("inputV", inputV);
 
         Debug.DrawRay(transform.position, camera.transform.position, Color.green);
 
@@ -92,30 +100,30 @@ public class playerController : MonoBehaviour {
         //PLAYER KEY INPUT MOVEMENT//
         if (Input.GetKey(KeyCode.W))
         {
-            anim.Play("Walk_Forward");
+            //anim.Play("Walk_Forward");
             transform.Translate(Vector3.forward * currentSpeed * Time.deltaTime);
         }
         if (Input.GetKey(KeyCode.S))
         {
-            anim.Play("Walk_Backward");
+            //anim.Play("Walk_Backward");
             transform.Translate(Vector3.back * currentSpeed * Time.deltaTime);
         }
         if (Input.GetKey(KeyCode.D))
         {
-            anim.Play("Walk_Right");
+            //anim.Play("Walk_Right");
             transform.Translate(Vector3.right * currentSpeed * Time.deltaTime);
         }
         if (Input.GetKey(KeyCode.A))
         {
-            anim.Play("Walk_Left");
+            //anim.Play("Walk_Left");
             transform.Translate(Vector3.left * currentSpeed * Time.deltaTime);
         }
 
         if (Input.GetKey(KeyCode.LeftShift) && canBoost)
         {
-
-            anim.Play("Sprint");
-
+            boosting = true;
+            
+            //anim.Play("Sprint");
             currentSpeed += boostSpeed;
 
             if (currentSpeed > maxSpeed)
@@ -127,6 +135,12 @@ public class playerController : MonoBehaviour {
 
             staminaBar.value = stamnia;
         }
+        else
+        {
+            boosting = false;
+        }
+
+        anim.SetBool("sprinting", boosting);
 
         if (Input.GetKeyUp(KeyCode.LeftShift))
         {
@@ -135,12 +149,14 @@ public class playerController : MonoBehaviour {
 
         if (stamnia < maxStam)
         {
+            boosting = false;
             canMove = false;
             stamnia += stamRegenAmount * Time.deltaTime;
         }
 
         if (stamnia <= stamStopAmount)
         {
+            boosting = false;
             canBoost = false;
             currentSpeed = moveSpeed;
         }
@@ -149,6 +165,7 @@ public class playerController : MonoBehaviour {
             canBoost = true;
         }
 
+        
         staminaBar.value = stamnia;
     }
 
