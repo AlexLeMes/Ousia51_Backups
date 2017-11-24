@@ -120,8 +120,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1254165612880556}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.5, y: 1.25, z: 18}
-  m_LocalScale: {x: 1.5, y: 2.5, z: 1.5}
+  m_LocalPosition: {x: 20.89, y: 3.5, z: -320.21}
+  m_LocalScale: {x: 4, y: 7, z: 4}
   m_Children:
   - {fileID: 224124232866302710}
   m_Father: {fileID: 0}
@@ -329,14 +329,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterWeapon: {fileID: 0}
-  deathMenu: {fileID: 0}
+  characterDeathMenu: {fileID: 0}
   MaxHealth: 150
   health: 100
   stamina: 1
   alive: 1
   moveSpeed: 0
   rotateSpeed: 0
-  boostSpeed: 0
   weaponOneAmmo: 0
   characterHealthBar: {fileID: 114055301278177292}
   characterOnFire: 0

@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: ba732719b68cbc14395b038ea64e9593
-timeCreated: 1511454172
+guid: 0ed44b01effa6a04db69a5961dba19b2
+timeCreated: 1511535757
 licenseType: Pro
 ModelImporter:
   serializedVersion: 21
@@ -67,9 +67,9 @@ ModelImporter:
     100118: gun body
     100120: Hair
     100122: mask
-    100124: //RootNode
-    100126: Sphere002
-    100128: Sphere003
+    100124: Sphere002
+    100126: Sphere003
+    100128: //RootNode
     400000: armor
     400002: body
     400004: CATHead
@@ -132,9 +132,9 @@ ModelImporter:
     400118: gun body
     400120: Hair
     400122: mask
-    400124: //RootNode
-    400126: Sphere002
-    400128: Sphere003
+    400124: Sphere002
+    400126: Sphere003
+    400128: //RootNode
     2300000: gun body
     2300002: Hair
     2300004: mask
@@ -152,7 +152,7 @@ ModelImporter:
     4300008: Sphere003
     4300010: body
     4300012: armor
-    7400000: shoot
+    7400000: sprint_Fixed
     9500000: //RootNode
     13700000: armor
     13700002: body
@@ -181,17 +181,17 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: shoot
+      name: sprint_Fixed
       takeName: Take 001
       firstFrame: 0
-      lastFrame: 4
+      lastFrame: 19
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -201,12 +201,12 @@ ModelImporter:
       keepOriginalPositionXZ: 0
       heightFromFeet: 0
       mirror: 0
-      bodyMask: 00000000010000000100000000000000000000000100000001000000010000000100000000000000000000000000000000000000
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events: []
       transformMask: []
-      maskType: 1
-      maskSource: {fileID: 31900000, guid: 0d71576d957a76f4b89a317ddbefa6b3, type: 2}
+      maskType: 3
+      maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
