@@ -87,11 +87,12 @@
     <Compile Include="Assets\AI\attack.cs" />
     <Compile Include="Assets\AI\Behaviour_tree.cs" />
     <Compile Include="Assets\AI\Chase.cs" />
+    <Compile Include="Assets\AI\flee.cs" />
+    <Compile Include="Assets\AI\idle.cs" />
     <Compile Include="Assets\AI\Node.cs" />
     <Compile Include="Assets\AI\patrol.cs" />
     <Compile Include="Assets\AI\selector_node.cs" />
     <Compile Include="Assets\AI\sequenc_node.cs" />
-    <Compile Include="Assets\scripts\Behaviour tree.cs" />
     <Compile Include="Assets\scripts\breakable.cs" />
     <Compile Include="Assets\scripts\Bullet.cs" />
     <Compile Include="Assets\scripts\bulletImpact.cs" />
@@ -101,7 +102,6 @@
     <Compile Include="Assets\scripts\dev\patrolTest.cs" />
     <Compile Include="Assets\scripts\dev\playerTakeDamageTest.cs" />
     <Compile Include="Assets\scripts\door.cs" />
-    <Compile Include="Assets\scripts\enemyAttack.cs" />
     <Compile Include="Assets\scripts\fire.cs" />
     <Compile Include="Assets\scripts\GameController.cs" />
     <Compile Include="Assets\scripts\gunLookat.cs" />
@@ -109,7 +109,6 @@
     <Compile Include="Assets\scripts\MainMenuController.cs" />
     <Compile Include="Assets\scripts\mouseLookat.cs" />
     <Compile Include="Assets\scripts\objectives.cs" />
-    <Compile Include="Assets\scripts\PathFinding.cs" />
     <Compile Include="Assets\scripts\pickups.cs" />
     <Compile Include="Assets\scripts\player.cs" />
     <Compile Include="Assets\scripts\playerController.cs" />

@@ -6,6 +6,7 @@ public enum Node_State { running, success, faliure };
 
 public class Node
 {
+    public Behaviour_tree BT;
     public List<Node> children = new List<Node>();
     public bool init;
     public Node headnode;
@@ -13,6 +14,20 @@ public class Node
     public Node_State state;
     public bool process;
 
+    public void Start()
+    {
+        for (int i = 0; i < children.Count; i++)
+        {
+            children[i].BT = BT;
+            children[i].Start();
+        }
+
+
+        if (state == Node_State.running)
+        {
+            Debug.Log("CURRENT STATE = RUNNING");
+        }
+    }
     public virtual void Execute()
     {
         init = true;
