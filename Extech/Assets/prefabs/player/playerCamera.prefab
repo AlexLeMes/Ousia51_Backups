@@ -202,7 +202,7 @@ MonoBehaviour:
   lookat: {fileID: 0}
   moveTowardsPlayer: 0
   moveTowardsPlayerSpeed: 5
-  offset: {x: 0, y: 4, z: -3.5}
+  offset: {x: 0, y: 3.8, z: -3.5}
 --- !u!124 &124094565984876068
 Behaviour:
   m_ObjectHideFlags: 1
