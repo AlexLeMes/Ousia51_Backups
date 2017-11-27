@@ -33,11 +33,11 @@ public class playerController : MonoBehaviour {
     float stamnia = 1f;
     public float maxStam = 100f;
 
-    float stamRegenAmount = 5f;
-    float stamUsageAamount = 35f;
+    public float stamRegenAmount = 5f;
+    public float stamUsageAamount = 35f;
 
-    float stamStopAmount = 5f;
-    float stamCanBeUsedAmount = 1f;
+    public float stamStopAmount = 5f;
+    public float stamCanBeUsedAmount = 1f;
 
     bool canMove = true;
     bool moving = false;

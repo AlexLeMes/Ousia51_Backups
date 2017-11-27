@@ -206,7 +206,7 @@ MonoBehaviour:
   fireDamage: 10
   plasmaImpactEffect: {fileID: 1199159265891164, guid: 1f0769969be478a4e9ac7dd9af236c2c,
     type: 2}
-  fireImpactEffect: {fileID: 1132802778598138, guid: 4d38d9bf18b13ab4988cd1e01d57013a,
+  fireImpactEffect: {fileID: 1426907162342830, guid: a0cf4a7572f6e7e4db23dc12a54ce9a4,
     type: 2}
   burnDamage: 15
   burnTime: 7
