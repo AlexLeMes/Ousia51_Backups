@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2017
+# Visual Studio for Mac
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Extech", "Extech.csproj", "{49359E72-B849-2741-508F-95E8499A9D80}"
 EndProject
 Global

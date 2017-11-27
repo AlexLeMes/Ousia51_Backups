@@ -184,7 +184,7 @@ public class weapon : MonoBehaviour {
             flamethrower = true;
             showAmmo = true;
 
-            gasBar.value = gas / 10;
+            //gasBar.value = gas / 10;
 
             currentWeapon.text = "Press '1' for Plasmagun";
 
@@ -199,9 +199,8 @@ public class weapon : MonoBehaviour {
         {
             flame.Play();
             flamethrowerLight.SetActive(true);
-            //shootFlameThrower();
+            shootFlameThrower();
             //shootFlameThrowerBullet();
-            StartCoroutine(shootFlameThrowerBullet());
             gas--;
 
             if(gas <= 0)
@@ -238,7 +237,8 @@ public class weapon : MonoBehaviour {
         plasmarb.AddForce(transform.forward * force);
 
         animShoot = true;
-        weaponAnim.SetBool("shoot", animShoot);
+        //weaponAnim.SetBool("shoot", animShoot);
+        //weaponAnim.SetTrigger("shootTrigger");
 
     }
     public void shootPowerAttack()
@@ -250,17 +250,19 @@ public class weapon : MonoBehaviour {
         plasmarb.AddForce(transform.forward * force);
 
         animShoot = true;
-        weaponAnim.SetBool("shoot", animShoot);
+        //weaponAnim.SetBool("shoot", animShoot);
+        //weaponAnim.SetTrigger("shootTrigger");
     }
 
-    /*
+
     public void shootFlameThrower()
     {
         flameShot = Instantiate(flameBullet, transform.position, Quaternion.identity);
         flameBulletRB = flameShot.GetComponent<Rigidbody>();
         flameBulletRB.AddForce(transform.forward * flameForce);
     }
-    */
+
+    /*
     IEnumerator shootFlameThrowerBullet()
     {
         flameShot = Instantiate(flameBullet, transform.position, Quaternion.identity);
@@ -269,5 +271,6 @@ public class weapon : MonoBehaviour {
 
         yield return new WaitForSeconds(5f);
     }
+    */
 }
 

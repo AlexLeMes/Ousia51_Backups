@@ -305,10 +305,10 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   target: 0
-  speed: 2.5
+  speed: 4
   playerspotted: 0
   canmove: 0
-  maxdistance: 25
+  maxdistance: 5
   waypoint: 0
   angle: 0
   vision: 30

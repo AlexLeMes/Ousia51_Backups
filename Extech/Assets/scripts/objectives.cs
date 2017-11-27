@@ -17,16 +17,21 @@ public class objectives : MonoBehaviour {
 
     public int currentObjectiveID = 0;
 
-    public GameObject explostion;
-
+    //public GameObject explostion;
+    public ParticleSystem explosionEffect;
     public GameObject successMenu;
 
     triggerObjective _objectiveTrigger;
 
     private void Awake()
     {
-        explostion.SetActive(false);
+        //explostion.SetActive(false);
         successMenu.SetActive(false);
+    }
+
+    public void Start()
+    {
+        explosionEffect.Stop();
     }
 
     private void Update()
@@ -53,13 +58,15 @@ public class objectives : MonoBehaviour {
 
     public void bombObjectiveFailed()
     {
-        explostion.SetActive(true);
+        //explostion.SetActive(true);
+        explosionEffect.Play();
         Debug.Log("BOMB WENT OFF - PLAYER LOST");
     }
 
     public void bombObjectiveSuccess()
     {
         bombObjectiveActive = false;
+
         successMenu.SetActive(true);
         // manger set time scale to 0 here
     }
