@@ -2664,8 +2664,9 @@ MonoBehaviour:
   fireInUse: {fileID: 0}
   ischarging: 0
   flamethrowerpicked: 0
-  maxGas: 250
-  gas: 250
+  canShoot: 1
+  maxGas: 500
+  gas: 500
   gasBar: {fileID: 0}
   gasBarObj: {fileID: 0}
   plasma: {fileID: 1819649527317586, guid: a69974c61944f4741b76f0135295a367, type: 2}
@@ -2737,6 +2738,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 725ca5f81d392d04b9d71c8653a3da3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _weapon: {fileID: 114022216206043626}
   anim: {fileID: 0}
   moveSpeed: 5
   boostSpeed: 10
@@ -3062,7 +3064,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: 328287293
+  randomSeed: 1792080038
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -3110,7 +3112,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 20
+      scalar: 23.868046
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -3458,7 +3460,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 1000
+    maxNumParticles: 2000
     size3D: 0
     rotation3D: 0
     gravityModifier:
@@ -3506,7 +3508,7 @@ ParticleSystem:
     serializedVersion: 5
     enabled: 1
     type: 4
-    angle: 15.180323
+    angle: 9.87256
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
@@ -3622,7 +3624,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 310
+      scalar: 300
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -3720,8 +3722,8 @@ ParticleSystem:
           outSlope: 0
           tangentMode: 0
         - serializedVersion: 2
-          time: 0.6936035
-          value: 0.8311691
+          time: 0.49157715
+          value: 1
           inSlope: 2
           outSlope: 2
           tangentMode: 0
@@ -6330,7 +6332,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: 649325797
+  randomSeed: 1309687235
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -9604,7 +9606,7 @@ ParticleSystemRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 10f063669a3553c4a902687b1c14f814, type: 2}
+  - {fileID: 2100000, guid: c28a651704e1fb946a1b4d3cc71c13ab, type: 2}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0

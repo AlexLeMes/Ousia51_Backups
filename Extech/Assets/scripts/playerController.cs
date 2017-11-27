@@ -13,6 +13,7 @@ public class playerController : MonoBehaviour {
     // character _character;
 
 
+    public weapon _weapon;
     public Animator anim;
     float inputH = 0f;
     float inputV = 0f;
@@ -23,6 +24,8 @@ public class playerController : MonoBehaviour {
     public float boostSpeed = 3f;
     float maxSpeed = 10f;
     float currentSpeed = 0f;
+
+    bool canShoot = true;
 
     //public Slider healthBar;
     public Slider staminaBar;
@@ -122,7 +125,8 @@ public class playerController : MonoBehaviour {
         if (Input.GetKey(KeyCode.LeftShift) && canBoost)
         {
             boosting = true;
-            
+            _weapon.canShoot = false;
+
             //anim.Play("Sprint");
             currentSpeed += boostSpeed;
 
@@ -138,6 +142,7 @@ public class playerController : MonoBehaviour {
         else
         {
             boosting = false;
+            _weapon.canShoot = true;
         }
 
         anim.SetBool("sprinting", boosting);

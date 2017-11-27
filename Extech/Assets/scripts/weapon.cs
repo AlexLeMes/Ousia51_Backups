@@ -25,8 +25,9 @@ public class weapon : MonoBehaviour {
     public GameObject plasmaInUse;
     public GameObject fireInUse;
 
-    public bool ischarging;
-    public bool flamethrowerpicked;
+    public bool ischarging = false;
+    public bool flamethrowerpicked = false;
+    public bool canShoot = true;
 
     public int maxGas;
     public int gas;
@@ -197,11 +198,18 @@ public class weapon : MonoBehaviour {
 
         if (Input.GetMouseButton(0) && flamethrower && canUseFlamethrower)
         {
-            flame.Play();
-            flamethrowerLight.SetActive(true);
-            shootFlameThrower();
-            //shootFlameThrowerBullet();
-            gas--;
+            if (canShoot)
+            {
+                flame.Play();
+                flamethrowerLight.SetActive(true);
+                shootFlameThrower();
+                gas--;
+            }
+            else
+            {
+                flame.Stop();
+                flamethrowerLight.SetActive(false);
+            }
 
             if(gas <= 0)
             {
@@ -230,26 +238,33 @@ public class weapon : MonoBehaviour {
     }
     public void shootPlasmaGun()
     {
-        weaponAudio.PlayOneShot(plasmaSFX);
+        if(canShoot)
+        {
+            weaponAudio.PlayOneShot(plasmaSFX);
 
-        plasmashot = Instantiate(plasma, transform.position, Quaternion.identity);
-        plasmarb = plasmashot.GetComponent<Rigidbody>();
-        plasmarb.AddForce(transform.forward * force);
+            plasmashot = Instantiate(plasma, transform.position, Quaternion.identity);
+            plasmarb = plasmashot.GetComponent<Rigidbody>();
+            plasmarb.AddForce(transform.forward * force);
 
-        animShoot = true;
+            animShoot = true;
+        }
+        
         //weaponAnim.SetBool("shoot", animShoot);
         //weaponAnim.SetTrigger("shootTrigger");
 
     }
     public void shootPowerAttack()
     {
-        weaponAudio.PlayOneShot(plasmaSFX);
+        if(canShoot)
+        {
+            weaponAudio.PlayOneShot(plasmaSFX);
 
-        plasmashot = Instantiate(plasmaSpecial, transform.position, Quaternion.identity);
-        plasmarb = plasmashot.GetComponent<Rigidbody>();
-        plasmarb.AddForce(transform.forward * force);
+            plasmashot = Instantiate(plasmaSpecial, transform.position, Quaternion.identity);
+            plasmarb = plasmashot.GetComponent<Rigidbody>();
+            plasmarb.AddForce(transform.forward * force);
 
-        animShoot = true;
+            animShoot = true;
+        }
         //weaponAnim.SetBool("shoot", animShoot);
         //weaponAnim.SetTrigger("shootTrigger");
     }
@@ -257,9 +272,11 @@ public class weapon : MonoBehaviour {
 
     public void shootFlameThrower()
     {
+
         flameShot = Instantiate(flameBullet, transform.position, Quaternion.identity);
         flameBulletRB = flameShot.GetComponent<Rigidbody>();
         flameBulletRB.AddForce(transform.forward * flameForce);
+   
     }
 
     /*
