@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4551627772265428}
   - component: {fileID: 33057386604875256}
   - component: {fileID: 23530139586728572}
-  - component: {fileID: 65065050132247028}
+  - component: {fileID: 64858586610433794}
   m_Layer: 0
   m_Name: satalite
   m_TagString: Untagged
@@ -81,8 +81,8 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1182523460347814}
   m_Mesh: {fileID: 4300092, guid: 6713036011a5a433fab56176edf3b0e6, type: 3}
---- !u!65 &65065050132247028
-BoxCollider:
+--- !u!64 &64858586610433794
+MeshCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -91,5 +91,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.1946917, y: 3.306146, z: 2.5770967}
-  m_Center: {x: 0.30239934, y: -0.5900644, z: 0.8464539}
+  m_Convex: 0
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300092, guid: 6713036011a5a433fab56176edf3b0e6, type: 3}
