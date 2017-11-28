@@ -46783,11 +46783,6 @@ Prefab:
       propertyPath: lookat
       value: 
       objectReference: {fileID: 1009585273}
-    - target: {fileID: 114325090805316794, guid: 5b79221642cf0954085a1efe40e35b71,
-        type: 2}
-      propertyPath: offset.z
-      value: -3.5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5b79221642cf0954085a1efe40e35b71, type: 2}
   m_IsPrefabParent: 0
